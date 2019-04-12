@@ -24,7 +24,7 @@ def get_subPage(pagecount) :
         result_links = getLinks(n*1 + 1)
         # link를 타고 넘어가 title 가져오기
         for result_link in result_links :
-            # 받은 link를 토대로 새롭게 requests, beautifulsoup 적용 
+            # 받은 link를 토대로 새롭게 requests, beautifulsoup 적용
             sub_link = requests.get(result_link)
             sub_obj = BeautifulSoup(sub_link.content , "html.parser")
             title = sub_obj.find("td")
