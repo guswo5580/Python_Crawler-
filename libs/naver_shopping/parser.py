@@ -16,7 +16,10 @@ def parse(pageString) :
     lis = ul.findAll('li', {'class' : '_itemSection'})
 
     products = []
-    for li in lis[:1] :
-        product = getProductInfo(li)
-        products.append(product)
+    for li in lis :
+        try :
+            product = getProductInfo(li)
+            products.append(product)
+        except:
+            print('--error--')
     return products
